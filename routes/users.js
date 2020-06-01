@@ -115,6 +115,9 @@ const auth= require("../authVerification");
    const id= req.headers.user_id;
    const db=req.db;
    db.users.findOne({
+         where:{
+            id:id
+         },
       include:[{
          model:db.images,
          include:[{
@@ -124,10 +127,6 @@ const auth= require("../authVerification");
             model:db.likes
             }]
          }]
-   },{
-      where:{
-         id:id
-      }
    }).then((user) => {
       const resObj= {
          id:user.id,
