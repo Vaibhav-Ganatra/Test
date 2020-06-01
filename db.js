@@ -1,5 +1,5 @@
 const {Sequelize}= require("sequelize");
- const sequelize= new Sequelize("test","postgres","zxcvbnma",{
+ const sequelize= new Sequelize("YOUR_DATABASE_NAME","postgres","YOUR_PASSWORD",{
    host:"localhost",
    dialect:"postgres",
    define:{
